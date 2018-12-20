@@ -1,0 +1,103 @@
+<html>
+  <head>    
+    <title>State of JS 2018</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">  
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.9/dc.min.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">State of JS 2018</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Graphs</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+        <div id="data-count" class="col-xs-12 dc-data-count dc-chart">
+            <h4>
+              Showing
+              <span class="filter-count"></span>
+              out of
+              <span class="total-count"></span>
+              answers |
+              <a id="reset-filters" href="#">Reset filters</a>
+            </h4>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-12">
+            <div id="chart-map" class="dc-chart chart-with-border"></div>
+        </div>             
+    </div>
+      
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>Demographics</h3>
+      </div>
+      <div class="col-md-2">
+        <h4 class="text-left">Gender</h4>
+        <div id="chart-gender" class="dc-chart"></div>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-left">Salary</h4>
+        <div id="chart-salary" class="dc-chart"></div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-left">Company Size</h4>
+        <div id="chart-company-size" class="dc-chart"></div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+            <h4 class="text-left">Filtered answers</h4>
+            <table id="data-table" class="table table-bordered table-striped">
+                <thead>
+                  <tr class="header">
+                      <th>Normalized country</th>
+                      <th>City</th>
+                      <th>Salary</th>
+                      <th>Gender</th>
+                      <th>Company Size</th>
+                  </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    </div>
+    <!-- dcjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.9/dc.js"></script>
+    <!-- Topojson -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.js"></script>
+    <!-- Lodash -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
+    <!-- App -->
+    <script src="/js/normalizeCountry.js"></script>
+    <script src="/js/app.js"></script>
+  </body>    
+
+</html>
