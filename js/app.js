@@ -29,14 +29,13 @@ Promise
             .group(ndx.groupAll());
 
         // ----- World Map
-        var worldMap = dc.geoChoroplethChart("#chart-map");
+        const worldMap = dc.geoChoroplethChart("#chart-map");
 
         const countryDim = ndx.dimension(answer => answer.country);
-
-        const countryGroup = countryDim.group().reduceCount(answer => answer.country);
+        const countryGroup = countryDim.group().reduceCount();
 
         worldMap
-            .width(d3.select('#chart-map').node().parentElement.clientWidth)
+            .width(960)
             .height(500)
             .dimension(countryDim)
             .group(countryGroup)
@@ -46,7 +45,7 @@ Promise
             .overlayGeoJson(topojson.feature(world, world.objects.countries).features, 'country', d => normalizeCountryByISOCode[d.id] || '')
             .projection(
                 d3.geoMercator()
-                    .center([0, 20])
+                    .center([0, 25])
                     .scale(150)
                     .rotate([0, 0])
             )
@@ -106,10 +105,10 @@ Promise
             .margins({ top: 10, right: 20, bottom: 45, left: 55 });
 
         // ----- Data table
-        const allDim = ndx.dimension(answer => answer.country);
-        const dataTableGroup = function (d) { return ''; };
-
         const dataTable = dc.dataTable('#data-table');
+
+        const allDim = ndx.dimension(answer => answer.country);
+        const dataTableGroup = () => '';
 
         dataTable
             .dimension(allDim)
@@ -124,13 +123,13 @@ Promise
             ])
             .sortBy(answer => answer.country)
             .order(d3.ascending)
-            .on('renderlet', function (table) {
+            .on('renderlet', table => {
                 // each time table is rendered remove nasty extra row dc.js insists on adding
                 table.select('tr.dc-table-group').remove();
             });
 
         // ----- Reset filters
-        d3.selectAll('a#reset-filters').on('click', function () {
+        d3.selectAll('a#reset-filters').on('click', () => {
             dc.filterAll();
             dc.renderAll();
         });

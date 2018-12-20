@@ -1,4 +1,12 @@
-.chart-with-border {
+div.dc-chart {
+    float: none;
+}
+
+.scroll-x {
+    overflow-x: scroll;
+}
+
+.chart-with-border svg {
     border: #ccc solid 1px;
 }
 
