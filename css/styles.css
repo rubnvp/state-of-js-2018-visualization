@@ -2,6 +2,20 @@ div.dc-chart {
     float: none;
 }
 
+.fixed-header {
+    position: sticky;
+    z-index: 1;
+    background-color: white;
+    top: 0px;
+    margin: 0 0px;
+    padding: 10px 25px 20px 25px;
+    text-align: center;
+}
+
+.fixed-header .dc-chart {
+    margin: 0;
+}
+
 .scroll-x {
     overflow-x: scroll;
 }

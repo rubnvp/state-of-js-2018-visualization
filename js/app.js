@@ -82,7 +82,7 @@ Promise
             .elasticY(true)
             .barPadding(0.1)
             .outerPadding(0.05)
-            .margins({ top: 10, right: 20, bottom: 45, left: 55 });
+            .margins({ top: 10, right: 35, bottom: 45, left: 55 });
 
         // ----- Company Size bar chart
         const companySizeBar = dc.barChart('#chart-company-size');
@@ -102,7 +102,7 @@ Promise
             .elasticY(true)
             .barPadding(0.1)
             .outerPadding(0.05)
-            .margins({ top: 10, right: 20, bottom: 45, left: 55 });
+            .margins({ top: 10, right: 35, bottom: 45, left: 55 });
 
         // ----- Data table
         const dataTable = dc.dataTable('#data-table');
