@@ -56,11 +56,12 @@ div.dc-chart {
     left: 50%;
     top: 40%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    font-size: 18px;
+    font-size: 14px;
     background-color: white;
     border: 1px dotted #ccc;
-    padding: 20px 40px;
+    padding: 10px 30px;
     transform: translate(-50%, -50%)
 }
 

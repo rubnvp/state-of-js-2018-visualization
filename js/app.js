@@ -135,6 +135,6 @@ Promise
         });
 
         // ----- Render all
-        d3.select('#loading').style('display', 'none');
+        // d3.select('#loading').style('display', 'none');
         dc.renderAll();
     });
