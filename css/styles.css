@@ -6,6 +6,10 @@ div.dc-chart {
     overflow-x: scroll;
 }
 
+.chart-map {
+    min-height: 500px;
+}
+
 .chart-map svg {
     border: #ccc solid 1px;
     display: block;
