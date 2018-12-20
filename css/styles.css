@@ -46,3 +46,21 @@ div.dc-chart {
 .country.deselected path {
     stroke: grey;
 }
+
+/* Spinner */
+
+.loading-spinner {
+    position: absolute;
+    top: 52px;
+    z-index: 2;
+    left: 50%;
+    animation: spin 0.8s ease-in-out infinite;
+    -webkit-animation: spin 0.8s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
