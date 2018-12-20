@@ -9,7 +9,7 @@ Promise
                     country: normalizeCountry(answer.about_you_your_country) || '~null',
                     city: answer.about_you_your_city,
                     salary: answer.about_you_yearly_salary || null,
-                    gender: answer.about_you_your_gender || null,
+                    gender: answer.about_you_your_gender,
                     companySize: size && (size.endsWith(' people') // remove people
                         ? size.slice(0, -' people'.length)
                         : size) || null,
