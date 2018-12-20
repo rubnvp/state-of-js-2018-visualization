@@ -19,7 +19,7 @@ Promise
     })
     .then(({ answers, world }) => {
         const ndx = crossfilter(answers);
-        const rangeColors = ["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"];
+        const isMobileView = window.innerWidth >= 992;
 
         // ----- Data count
         const dataCount = dc.dataCount('#data-count');
@@ -39,7 +39,9 @@ Promise
             .height(500)
             .dimension(countryDim)
             .group(countryGroup)
-            .colors(d3.scaleQuantize().range(rangeColors))
+            .colors(d3.scaleQuantize().range(
+                ["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]
+            ))
             .colorDomain([0, 900])
             .colorCalculator(d => d ? worldMap.colors()(d) : '#ccc') // .colorAccessor(d => { return worldMap.colors()(d) ? d : '#ccc' })
             .overlayGeoJson(topojson.feature(world, world.objects.countries).features, 'country', d => normalizeCountryByISOCode[d.id] || '')
@@ -116,11 +118,11 @@ Promise
             .size(20)
             .columns([
                 answer => answer.country,
-                answer => answer.city,
+                isMobileView && (answer => answer.city),
                 answer => answer.salary,
                 answer => answer.gender,
                 answer => answer.companySize,
-            ])
+            ].filter(c => c))
             .sortBy(answer => answer.country)
             .order(d3.ascending)
             .on('renderlet', table => {
