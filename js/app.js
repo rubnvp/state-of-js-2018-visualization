@@ -1,6 +1,6 @@
 // fetch data and init
 Promise
-    .all([d3.csv('/data/sojs18.csv'), d3.json('/data/world-110m2.json')])
+    .all([d3.csv('./data/sojs18.csv'), d3.json('./data/world-110m2.json')])
     .then(([surveyAnswers, world]) => {
         const answers = surveyAnswers
             .map(answer => { // map interesting values
