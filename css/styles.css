@@ -12,6 +12,10 @@ div.dc-chart {
     text-align: center;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
 .fixed-header .dc-chart {
     margin: 0;
 }
