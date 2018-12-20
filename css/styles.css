@@ -6,8 +6,10 @@ div.dc-chart {
     overflow-x: scroll;
 }
 
-.chart-with-border svg {
+.chart-map svg {
     border: #ccc solid 1px;
+    display: block;
+    margin: 0 auto;
 }
 
 .country {
