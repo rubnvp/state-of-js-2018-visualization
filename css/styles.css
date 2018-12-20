@@ -2,7 +2,7 @@ div.dc-chart {
     float: none;
 }
 
-.fixed-header {
+.sticky-header {
     position: sticky;
     z-index: 1;
     background-color: white;
@@ -16,7 +16,7 @@ div.dc-chart {
     white-space: nowrap;
 }
 
-.fixed-header .dc-chart {
+.sticky-header .dc-chart {
     margin: 0;
 }
 
