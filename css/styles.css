@@ -49,11 +49,22 @@ div.dc-chart {
 
 /* Spinner */
 
-.loading-spinner {
+.loading-wrapper {
     position: absolute;
     top: 52px;
     z-index: 2;
     left: 50%;
+    top: 40%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    background-color: white;
+    border: 1px dotted #ccc;
+    padding: 20px 40px;
+    transform: translate(-50%, -50%)
+}
+
+.loading-spinner {
     animation: spin 0.8s ease-in-out infinite;
     -webkit-animation: spin 0.8s ease-in-out infinite;
 }

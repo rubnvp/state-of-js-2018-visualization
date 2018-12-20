@@ -27,20 +27,23 @@
     <div class="container">
 
       <!-- Loading spinner face -->
-      <svg id="loading" class="loading-spinner" width="40" height="40" viewBox="0 0 1000 1000">
-        <g transform="translate(500,500) scale(2)" fill="none">
-          <circle r="200"  stroke="#444" stroke-width="20"></circle>
-          <g transform="translate(-60,-60)">
-            <circle r="20" fill="#444"></circle>
+      <span id="loading" class="loading-wrapper">
+        <svg class="loading-spinner" width="40" height="40" viewBox="0 0 1000 1000">
+          <g transform="translate(500,500) scale(2)" fill="none">
+            <circle r="200"  stroke="#444" stroke-width="20"></circle>
+            <g transform="translate(-60,-60)">
+              <circle r="20" fill="#444"></circle>
+            </g>
+            <g transform="translate(60,-60)">
+              <circle r="20" fill="#444"></circle>
+            </g>
+            <g transform="translate(-100,0)" fill="#444">
+              <path d="m0 0 a50,50 0 0,0 200,0"></path>
+            </g>
           </g>
-          <g transform="translate(60,-60)">
-            <circle r="20" fill="#444"></circle>
-          </g>
-          <g transform="translate(-100,0)" fill="#444">
-            <path d="m0 0 a50,50 0 0,0 200,0"></path>
-          </g>
-        </g>
-      </svg>
+        </svg>
+        &nbsp; Loading...
+      </span>
 
       <div class="sticky-header">
         <div id="data-count" class="dc-data-count dc-chart">
